@@ -1,0 +1,5 @@
+consistDepth=2
+eclipse.preferences.version=1
+inductionDepth=100
+pdrMax=2
+timeout=400
