@@ -1,0 +1,12 @@
+/.project
+*.log
+CertWare
+ErrorModelV2
+osate2-ba
+osate2-core
+osate2-ocarina
+osate2-plugins
+osate-ge
+smaccm
+regressionSuite
+.aadlbin-gen
