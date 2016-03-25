@@ -95,25 +95,3 @@ if [ -d "regressionSuite" ]; then
 else
    git clone https://github.com/pr-martin/regressionSuite.git regressionSuite -b master
 fi
-
-
-# ------------------------------------------------------------------------------
-# Clone the local git repo to get the runtime Osate workspace and any local
-# model tests.
-# ------------------------------------------------------------------------------
-#if [ -d "localRepo" ]; then
-#   cd ./localRepo
-#   git reset --hard
-#   git pull
-#   cd ..
-#else
-#   git clone /usr/lfs/ssd_v0/testing/repos/osate.git ./localRepo -b master
-#fi
-
-# ------------------------------------------------------------------------------
-# Copy local model tests to the folder for the Regression Suite
-# ------------------------------------------------------------------------------
-#cp -r ./localRepo/ulb ./regressionSuite/rcpttSuite
-
-
-
