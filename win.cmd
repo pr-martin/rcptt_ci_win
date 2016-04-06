@@ -1,22 +1,21 @@
-REM !!! Replace the value below with the path to the directory there
-REM application under test (AUT) is located.
+REM - Input Argument 1: Path to the Headless RCPTT application.
+REM - Typically something like:
+REM - C:\eclipse\rcptt.runner-2.0.1\eclipse
 
 
-REM SET AUT=C:\absolute\path\to\your\application\directory
-REM SET AUT=C:\eclipse\osate2-2.1.2-win32.win32.x86_64
+REM - This is the Application Under Test (i.e. what we just built)
 set AUT=%~dp0%osate2-core\org.osate.build.product\target\products\osate2\win32\win32\x86_64
 
-REM set AUT_WKSPC=C:\Users\prmarti1\smaccm\rcptt_ci.dev\osate2_workspace
+REM - This is the workspace that we want our Osate build to use. This should
+REM - have been included with the rcptt_ci project.
 set AUT_WKSPC=%~dp0%osate2_workspace
 
-REM SET RUNNER=%USERPROFILE%\runner
-REM RUNNER=C:\eclipse\rcptt.runner-2.0.1\eclipse
+REM - The path to the Headless RCPTT Runner. This is the argument to this script
 set RUNNER=%1
 
 REM SET PROJECT=.
 SET PROJECT=.\regressionSuite\rcpttSuite
 
-REM SET AUT_WS=.\osate2_workspace
 
 REM Path to directory with test results, default is C:\Users\User\results
 SET RESULTS=%PROJECT%\..\results
@@ -40,12 +39,3 @@ java -jar %RUNNER%/plugins/org.eclipse.equinox.launcher_1.3.100.v20150511-1540.j
  -reuseExistingWorkspace ^
  -testOptions "testExecTimeout=3600"
  
-REM java -jar %RUNNER%/plugins/org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar ^
-REM  -application org.eclipse.rcptt.runner.headless ^
-REM  -data %RESULTS%/runner-workspace/ ^
-REM  -aut %AUT% ^
-REM  -autWsPrefix %RESULTS%/aut-workspace ^
-REM  -autConsolePrefix %RESULTS%/aut-output ^
-REM  -htmlReport %RESULTS%/report.html ^
-REM  -junitReport %RESULTS%/report.xml ^
-REM  -import %PROJECT%
